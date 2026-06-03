@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import Header from "../components/Header"
 import Footer from "../components/Footer"
 import arroz from "../assets/arroz.png"
@@ -12,7 +12,7 @@ import macarrao from "../assets/macarrao.png"
 import manteiga from "../assets/manteiga.png"
 
 function CadastroProdutos() {
-    const [produtos, setProdutos] = useState([
+    const produtosPadrao = [
         {
             id: 1,
             nome: "Arroz 5kg",
@@ -67,7 +67,7 @@ function CadastroProdutos() {
             preco: 29.99,
             imagem: manteiga,
         },
-    ])
+    ]
 
     const [produtoAtual, setProdutoAtual] = useState({
         id: null,
@@ -76,7 +76,16 @@ function CadastroProdutos() {
         imagem: "",
     })
 
+    const [produtos, setProdutos] = useState(() => {
+        const produtosSalvos = localStorage.getItem("produtos");
+        return produtosSalvos ? JSON.parse(produtosSalvos) : produtosPadrao;
+    })
+
     const [editando, setEditando] = useState(false)
+
+    useEffect(() => {
+        localStorage.setItem("produtos", JSON.stringify(produtos));
+    }, [produtos])
 
     const handleChange = (e) => {
         setProdutoAtual({
@@ -141,6 +150,11 @@ function CadastroProdutos() {
         )
     }
 
+    const restaurarProdutos = () => {
+        localStorage.removeItem("produtos");
+        window.location.reload();
+    }
+
     return (
         <>
             <Header />
@@ -177,8 +191,8 @@ function CadastroProdutos() {
                     />
 
                     {produtoAtual.imagem && (
-                        <div style={{ marginTop: "10px" }}>
-                            <img src={produtoAtual.imagem} alt="Prévia" style={{ width: "150px", borderRadius: "10px" }} />
+                        <div className="previa-imagem">
+                            <img src={produtoAtual.imagem} alt="Prévia" />
                         </div>
                     )}
 
@@ -199,15 +213,23 @@ function CadastroProdutos() {
 
                                 <p>R$ {Number(produto.preco).toFixed(2).replace(".", ",")}</p>
 
-                                <button onClick={() => editarProduto(produto)}>
-                                    Editar
-                                </button>
+                                <div className="acoes-produto">
+                                    <button className="botao-editar" onClick={() => editarProduto(produto)}>
+                                        Editar
+                                    </button>
 
-                                <button onClick={() => excluirProduto(produto.id)} style={{ marginLeft: "10px" }}>
-                                    Excluir
-                                </button>
+                                    <button className="botao-excluir" onClick={() => excluirProduto(produto.id)}>
+                                        Excluir
+                                    </button>
+                                </div>
                             </div>
                         ))}
+                    </div>
+
+                    <div className="area-restaurar">
+                        <button className="botao-restaurar" onClick={restaurarProdutos}>
+                            Restaurar Produtos Originais
+                        </button>
                     </div>
                 </section>
             </main>

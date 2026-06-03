@@ -5,7 +5,7 @@ function ProductCard({ nome, preco, imagem }) {
     <div className="card">
         <img src={imagem} alt={nome} className="produto" />
         <p>{nome}</p>
-        <p>{preco}</p>
+        <p>R$ {Number(preco).toFixed(2).replace(".", ",")}</p>
         <Link to="/carrinho">Adicionar ao carrinho</Link>
     </div>
   )
