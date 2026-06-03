@@ -1,0 +1,283 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+main {
+  min-height: 70vh;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #2ecc71;
+  padding: 0 30px;
+}
+
+.logo {
+  height: 100px;
+}
+
+nav ul {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+
+nav a {
+  display: inline-block;
+  background-color: #27ae60;
+  padding: 8px 14px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  background-color: #219150;
+}
+
+.carrinho {
+  height: 50px;
+}
+
+.botao-carrinho {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+.botao-carrinho:hover {
+  background-color: #3fb671;
+}
+
+h2 {
+  text-align: center;
+  margin: 30px 0;
+  color: #333;
+}
+
+h3 {
+  margin-bottom: 10px;
+}
+
+.produtos {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(220px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.card {
+  background: white;
+  padding: 15px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.produto {
+  width: 100%;
+  height: 180px;
+  object-fit: contain;
+}
+
+.card p {
+  margin: 8px 0;
+}
+
+.card a,
+.card button {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 14px;
+  background-color: #27ae60;
+  color: white;
+  border-radius: 8px;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.card a:hover,
+.card button:hover {
+  background-color: #219150;
+}
+
+article {
+  max-width: 600px;
+  text-align: center;
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  margin: 20px auto;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+article img {
+  width: 100%;
+  max-width: 350px;
+  margin-top: 15px;
+}
+
+.contato {
+  max-width: 500px;
+  margin: 30px auto;
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.contato label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.contato input,
+.contato textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+.contato textarea {
+  resize: none;
+  height: 120px;
+}
+
+.contato button {
+  width: 100%;
+  padding: 12px;
+  background-color: #2ecc71;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.contato button:hover {
+  background-color: #219150;
+}
+
+.resumo {
+  max-width: 400px;
+  margin: 20px auto;
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.botao-finalizar {
+  width: 100%;
+  margin-top: 15px;
+  padding: 12px;
+  background-color: #2ecc71;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.botao-finalizar:hover {
+  background-color: #219150;
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  background-color: #2ecc71;
+  color: white;
+  text-align: center;
+  padding: 30px 20px;
+  margin-top: 40px;
+}
+
+.titulo-footer {
+  margin: 0;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.desenvolvedores {
+  display: flex;
+  justify-content: center;
+  gap: 120px;
+  flex-wrap: wrap;
+}
+
+.desenvolvedores div {
+  line-height: 1.8;
+  min-width: 220px;
+}
+
+@media (max-width: 900px) {
+  .produtos {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .desenvolvedores {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  header {
+    flex-direction: column;
+    padding: 20px;
+    gap: 15px;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .produtos {
+    grid-template-columns: 1fr;
+  }
+
+  .logo {
+    height: 80px;
+  }
+
+  .carrinho {
+    height: 40px;
+  }
+
+  .desenvolvedores {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
