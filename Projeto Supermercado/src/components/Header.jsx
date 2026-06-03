@@ -22,6 +22,10 @@ function Header() {
                 <li>
                     <Link to="/faleconosco">Fale Conosco</Link>
                 </li>
+
+                <li>
+                    <Link to="/cadastro-produtos">Cadastro de Produtos</Link>
+                </li>
             </ul>
         </nav>
 
