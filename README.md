@@ -1,122 +1,91 @@
 # 🛒 Supermercado Támaisbarato
 
-Trabalho da faculdade, matéria de desenvolvimento web, desenvolvido em React.js simulando um site de e-commerce para um supermercado, contendo catálogo de produtos, carrinho de compras, formulário de contato e um sistema CRUD para gerenciamento de produtos.
-
-## 📋 Sobre o Projeto
-
-O Supermercado Támaisbarato foi desenvolvido com o objetivo de aplicar os conceitos de desenvolvimento Front-End utilizando React.js, componentes reutilizáveis, roteamento de páginas e gerenciamento de estado.
-
-O sistema permite que o usuário navegue pelos produtos disponíveis, visualize promoções, simule um carrinho de compras e entre em contato com a empresa através de um formulário.
-
-Além disso, foi implementado um CRUD (Create, Read, Update e Delete) para o gerenciamento de produtos, permitindo cadastrar, listar, editar e excluir produtos.
+Projeto desenvolvido para a disciplina de Desenvolvimento Web utilizando React.js. O sistema simula um e-commerce de supermercado, permitindo navegação entre produtos, gerenciamento de carrinho de compras e administração de produtos através de um CRUD completo.
 
 ---
 
-## 🚀 Funcionalidades
+## 📸 Funcionalidades
 
-### Página Inicial
+### 🏠 Página Inicial
 
 * Exibição de produtos em destaque.
 * Área de promoções e novidades.
 * Navegação intuitiva entre as páginas.
 
-### Produtos
+### 🛍️ Catálogo de Produtos
 
-* Listagem completa dos produtos disponíveis.
-* Exibição de imagem, nome e preço de cada item.
+* Listagem dinâmica dos produtos.
+* Exibição de imagem, nome e preço.
+* Integração com o sistema de carrinho.
 
-### Carrinho de Compras
+### 🛒 Carrinho de Compras
 
-* Visualização dos produtos adicionados.
+* Adicionar produtos ao carrinho.
+* Alterar quantidade de itens.
+* Remover produtos individualmente.
+* Limpar carrinho completamente.
 * Cálculo automático do valor total da compra.
-* Simulação de finalização da compra.
+* Persistência dos dados utilizando LocalStorage.
 
-### Fale Conosco
+### 📦 Gerenciamento de Produtos (CRUD)
 
-* Formulário para envio de mensagens.
-* Campos:
+* Cadastro de novos produtos.
+* Upload de imagens personalizadas.
+* Edição de produtos existentes.
+* Exclusão de produtos.
+* Restauração dos produtos originais.
+* Persistência dos dados utilizando LocalStorage.
 
-  * Nome
-  * E-mail
-  * Mensagem
+### 📞 Fale Conosco
 
-### Cadastro de Produtos (CRUD)
+* Formulário de contato.
+* Campos de Nome, E-mail e Mensagem.
 
-* Cadastrar novos produtos.
-* Listar produtos cadastrados.
-* Editar informações de produtos existentes.
-* Excluir produtos da listagem.
+### 📱 Responsividade
+
+* Layout adaptado para computadores, tablets e smartphones.
 
 ---
 
-## 🛠️ Tecnologias Utilizadas
+## 🚀 Tecnologias Utilizadas
 
 * React.js
 * React Router DOM
-* JavaScript
+* JavaScript (ES6+)
 * HTML5
 * CSS3
 * Vite
+* LocalStorage
 
 ---
 
-## 📁 Estrutura do Projeto
+## ⚙️ Instalação
+
+### Clonar o repositório
 
 ```bash
-src/
-│
-├── assets/
-│   ├── imagens dos produtos
-│
-├── components/
-│   ├── Footer.jsx
-│   ├── Header.jsx
-│   └── ProductCard.jsx
-│
-├── pages/
-│   ├── Home.jsx
-│   ├── Produtos.jsx
-│   ├── Carrinho.jsx
-│   ├── FaleConosco.jsx
-│   └── CadastroProdutos.jsx
-│
-├── routes/
-│   └── AppRoutes.jsx
-│
-├── App.jsx
-├── App.css
-└── main.jsx
+git clone https://github.com/seu-usuario/supermercado-tamaisbarato.git
 ```
 
----
-
-## ⚙️ Instalação e Execução
-
-### 1. Clonar o repositório
-
-```bash
-git clone https://github.com/seu-usuario/Supermercado-Tamaisbarato-CRUD.git
-```
-
-### 2. Entrar na pasta do projeto
+### Entrar na pasta do projeto
 
 ```bash
 cd supermercado-tamaisbarato
 ```
 
-### 3. Instalar as dependências
+### Instalar as dependências
 
 ```bash
 npm install
 ```
 
-### 4. Executar o projeto
+### Executar o projeto
 
 ```bash
 npm run dev
 ```
 
-### 5. Abrir no navegador
+### Abrir no navegador
 
 ```text
 http://localhost:5173
@@ -124,15 +93,31 @@ http://localhost:5173
 
 ---
 
+## 💾 Persistência de Dados
+
+O projeto utiliza o LocalStorage do navegador para armazenar:
+
+* Produtos cadastrados.
+* Produtos editados.
+* Produtos removidos.
+* Itens adicionados ao carrinho.
+* Quantidade de cada item no carrinho.
+
+Dessa forma, os dados permanecem disponíveis mesmo após atualizar a página.
+
+---
+
 ## 🎯 Objetivos de Aprendizagem
 
 Este projeto foi desenvolvido para praticar:
 
-* Componentização em React.
-* Props e reutilização de componentes.
-* Gerenciamento de estado com useState.
+* Componentização com React.
+* Criação de componentes reutilizáveis.
+* Gerenciamento de estado com useState e useEffect.
 * Manipulação de eventos.
-* Rotas com React Router.
-* Desenvolvimento de CRUD.
-* Organização de projetos Front-End.
+* React Router.
+* CRUD (Create, Read, Update e Delete).
+* Persistência de dados com LocalStorage.
+* Upload e exibição de imagens.
 * Responsividade com CSS.
+* Organização de projetos Front-End.

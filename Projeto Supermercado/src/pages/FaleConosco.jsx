@@ -30,46 +30,48 @@ function FaleConosco() {
 
     return (
         <>
-            <Header />
+            <div className="pagina">
+                <Header />
 
-            <main>
-                <h2>Fale Conosco</h2>
+                <main>
+                    <h2>Fale Conosco</h2>
 
-                <form className="contato" onSubmit={handleSubmit}>
-                    <label htmlFor="nome">Nome:</label>
-                    <input
-                        id="nome"
-                        type="text"
-                        name="nome"
-                        value={formulario.nome}
-                        onChange={handleChange}
-                        required
-                    />
+                    <form className="contato" onSubmit={handleSubmit}>
+                        <label htmlFor="nome">Nome:</label>
+                        <input
+                            id="nome"
+                            type="text"
+                            name="nome"
+                            value={formulario.nome}
+                            onChange={handleChange}
+                            required
+                        />
 
-                    <label htmlFor="email">Email:</label>
-                    <input
-                        id="email"
-                        type="email"
-                        name="email"
-                        value={formulario.email}
-                        onChange={handleChange}
-                        required
-                    />
+                        <label htmlFor="email">Email:</label>
+                        <input
+                            id="email"
+                            type="email"
+                            name="email"
+                            value={formulario.email}
+                            onChange={handleChange}
+                            required
+                        />
 
-                    <label htmlFor="mensagem">Mensagem:</label>
-                    <textarea
-                        id="mensagem"
-                        name="mensagem"
-                        value={formulario.mensagem}
-                        onChange={handleChange}
-                        required
-                    />
+                        <label htmlFor="mensagem">Mensagem:</label>
+                        <textarea
+                            id="mensagem"
+                            name="mensagem"
+                            value={formulario.mensagem}
+                            onChange={handleChange}
+                            required
+                        />
 
-                    <button type="submit">Enviar</button>
-                </form>
-            </main>
+                        <button type="submit">Enviar</button>
+                    </form>
+                </main>
 
-            <Footer />
+                <Footer />
+            </div>
         </>
     )
 }

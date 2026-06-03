@@ -164,84 +164,86 @@ function CadastroProdutos() {
 
     return (
         <>
-            <Header />
+            <div className="pagina">
+                <Header />
 
-            <main>
-                <h2>Cadastro de Produtos</h2>
+                <main>
+                    <h2>Cadastro de Produtos</h2>
 
-                <form className="contato" onSubmit={salvarProduto}>
-                    
-                    <label>Nome do Produto</label>
-                    <input
-                        type="text"
-                        name="nome"
-                        value={produtoAtual.nome}
-                        onChange={handleChange}
-                        required
-                    />
+                    <form className="contato" onSubmit={salvarProduto}>
+                        
+                        <label>Nome do Produto</label>
+                        <input
+                            type="text"
+                            name="nome"
+                            value={produtoAtual.nome}
+                            onChange={handleChange}
+                            required
+                        />
 
-                    <label>Preço</label>
-                    <input
-                        type="number"
-                        step="0.01"
-                        name="preco"
-                        value={produtoAtual.preco}
-                        onChange={handleChange}
-                        required
-                    />
+                        <label>Preço</label>
+                        <input
+                            type="number"
+                            step="0.01"
+                            name="preco"
+                            value={produtoAtual.preco}
+                            onChange={handleChange}
+                            required
+                        />
 
-                    <label>Imagem</label>
-                    <input
-                        type="file"
-                        accept="image/*"
-                        onChange={handleImagem}
-                    />
+                        <label>Imagem</label>
+                        <input
+                            type="file"
+                            accept="image/*"
+                            onChange={handleImagem}
+                        />
 
-                    {produtoAtual.imagem && (
-                        <div className="previa-imagem">
-                            <img src={produtoAtual.imagem} alt="Prévia" />
-                        </div>
-                    )}
-
-                    <button type="submit">
-                        {editando ? "Atualizar Produto" : "Cadastrar Produto"}
-                    </button>
-                </form>
-
-                <section>
-                    <h2>Produtos Cadastrados</h2>
-
-                    <div className="produtos">
-                        {produtos.map((produto) => (
-                            <div className="card" key={produto.id}>
-                                <img src={produto.imagem} alt={produto.nome} className="produto" />
-
-                                <h3>{produto.nome}</h3>
-
-                                <p>R$ {Number(produto.preco).toFixed(2).replace(".", ",")}</p>
-
-                                <div className="acoes-produto">
-                                    <button className="botao-editar" onClick={() => editarProduto(produto)}>
-                                        Editar
-                                    </button>
-
-                                    <button className="botao-excluir" onClick={() => excluirProduto(produto.id)}>
-                                        Excluir
-                                    </button>
-                                </div>
+                        {produtoAtual.imagem && (
+                            <div className="previa-imagem">
+                                <img src={produtoAtual.imagem} alt="Prévia" />
                             </div>
-                        ))}
-                    </div>
+                        )}
 
-                    <div className="area-restaurar">
-                        <button className="botao-restaurar" onClick={restaurarProdutos}>
-                            Restaurar Produtos Originais
+                        <button type="submit">
+                            {editando ? "Atualizar Produto" : "Cadastrar Produto"}
                         </button>
-                    </div>
-                </section>
-            </main>
+                    </form>
 
-            <Footer />
+                    <section>
+                        <h2>Produtos Cadastrados</h2>
+
+                        <div className="produtos">
+                            {produtos.map((produto) => (
+                                <div className="card" key={produto.id}>
+                                    <img src={produto.imagem} alt={produto.nome} className="produto" />
+
+                                    <h3>{produto.nome}</h3>
+
+                                    <p>R$ {Number(produto.preco).toFixed(2).replace(".", ",")}</p>
+
+                                    <div className="acoes-produto">
+                                        <button className="botao-editar" onClick={() => editarProduto(produto)}>
+                                            Editar
+                                        </button>
+
+                                        <button className="botao-excluir" onClick={() => excluirProduto(produto.id)}>
+                                            Excluir
+                                        </button>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+
+                        <div className="area-restaurar">
+                            <button className="botao-restaurar" onClick={restaurarProdutos}>
+                                Restaurar Produtos Originais
+                            </button>
+                        </div>
+                    </section>
+                </main>
+
+                <Footer />
+            </div>
         </>
     )
 }

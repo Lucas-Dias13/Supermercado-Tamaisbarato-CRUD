@@ -10,8 +10,14 @@ body {
   color: #333;
 }
 
+.pagina {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
 main {
-  min-height: 70vh;
+  flex: 1;
 }
 
 header {

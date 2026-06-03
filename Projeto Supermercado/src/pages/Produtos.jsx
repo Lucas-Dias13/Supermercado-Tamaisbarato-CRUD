@@ -7,27 +7,29 @@ function Produtos() {
 
   return (
     <>
-      <Header />
+      <div className="pagina">
+        <Header />
 
-      <main>
-        <h2>Produtos</h2>
+        <main>
+          <h2>Produtos</h2>
 
-        <section>
-          <div className="produtos">
-            {produtos.map((produto) => (
-              <ProductCard
-                key={produto.id}
-                id={produto.id}
-                nome={produto.nome}
-                preco={produto.preco}
-                imagem={produto.imagem}
-              />
-            ))}
-          </div>
-        </section>
-      </main>
+          <section>
+            <div className="produtos">
+              {produtos.map((produto) => (
+                <ProductCard
+                  key={produto.id}
+                  id={produto.id}
+                  nome={produto.nome}
+                  preco={produto.preco}
+                  imagem={produto.imagem}
+                />
+              ))}
+            </div>
+          </section>
+        </main>
 
-      <Footer />
+        <Footer />
+      </div>
     </>
   )
 }

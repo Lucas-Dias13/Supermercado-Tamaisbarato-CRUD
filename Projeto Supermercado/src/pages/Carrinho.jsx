@@ -40,80 +40,82 @@ function Carrinho() {
 
   return (
     <>
-      <Header />
+      <div className="pagina">
+        <Header />
 
-      <main>
-        <h2>Seu Carrinho</h2>
+        <main>
+          <h2>Seu Carrinho</h2>
 
-        {carrinho.length === 0 ? (
-          <section className="resumo">
-            <h3>Seu carrinho está vazio</h3>
-            <p>Adicione produtos para continuar.</p>
-          </section>
-        ) : (
-          <>
-            <section>
-              <div className="produtos">
-                {carrinho.map((produto) => (
-                  <div className="card" key={produto.id}>
-                    <img
-                      src={produto.imagem}
-                      alt={produto.nome}
-                      className="produto"
-                    />
-                    <h3>{produto.nome}</h3>
-
-                    <p>
-                      R$ {Number(produto.preco).toFixed(2).replace(".", ",")}
-                    </p>
-
-                    <p>
-                      Quantidade: {produto.quantidade}
-                    </p>
-
-                    <p>
-                      Subtotal: R${" "}
-                      {(
-                        produto.preco * produto.quantidade
-                      )
-                        .toFixed(2)
-                        .replace(".", ",")}
-                    </p>
-
-                    <div className="acoes-carrinho">
-                      <button type="button" className="botao-quantidade" onClick={() => diminuirQuantidade(produto.id)}>
-                        -
-                      </button>
-
-                      <button type="button" className="botao-quantidade" onClick={() => aumentarQuantidade(produto.id)}>
-                        +
-                      </button>
-
-                      <button type="button" className="botao-remover-carrinho" onClick={() => removerProduto(produto.id)}>
-                        Remover
-                      </button>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </section>
-
+          {carrinho.length === 0 ? (
             <section className="resumo">
-              <h3>Total: R$ {total.toFixed(2).replace(".", ",")}</h3>
-
-              <button type="button" className="botao-finalizar">
-                Finalizar Compra
-              </button>
-
-              <button type="button" className="botao-limpar-carrinho" onClick={limparCarrinho}>
-                Limpar Carrinho
-              </button>
+              <h3>Seu carrinho está vazio</h3>
+              <p>Adicione produtos para continuar.</p>
             </section>
-          </>
-        )}
-      </main>
+          ) : (
+            <>
+              <section>
+                <div className="produtos">
+                  {carrinho.map((produto) => (
+                    <div className="card" key={produto.id}>
+                      <img
+                        src={produto.imagem}
+                        alt={produto.nome}
+                        className="produto"
+                      />
+                      <h3>{produto.nome}</h3>
 
-      <Footer />
+                      <p>
+                        R$ {Number(produto.preco).toFixed(2).replace(".", ",")}
+                      </p>
+
+                      <p>
+                        Quantidade: {produto.quantidade}
+                      </p>
+
+                      <p>
+                        Subtotal: R${" "}
+                        {(
+                          produto.preco * produto.quantidade
+                        )
+                          .toFixed(2)
+                          .replace(".", ",")}
+                      </p>
+
+                      <div className="acoes-carrinho">
+                        <button type="button" className="botao-quantidade" onClick={() => diminuirQuantidade(produto.id)}>
+                          -
+                        </button>
+
+                        <button type="button" className="botao-quantidade" onClick={() => aumentarQuantidade(produto.id)}>
+                          +
+                        </button>
+
+                        <button type="button" className="botao-remover-carrinho" onClick={() => removerProduto(produto.id)}>
+                          Remover
+                        </button>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </section>
+
+              <section className="resumo">
+                <h3>Total: R$ {total.toFixed(2).replace(".", ",")}</h3>
+
+                <button type="button" className="botao-finalizar">
+                  Finalizar Compra
+                </button>
+
+                <button type="button" className="botao-limpar-carrinho" onClick={limparCarrinho}>
+                  Limpar Carrinho
+                </button>
+              </section>
+            </>
+          )}
+        </main>
+
+        <Footer />
+      </div>
     </>
   )
 }

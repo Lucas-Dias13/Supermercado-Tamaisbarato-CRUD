@@ -30,35 +30,39 @@ function Home() {
 
   return (
     <>
-      <Header />
+      <div className="pagina">
+        <Header />
 
-      <section>
-        <h2>Produtos em Destaque</h2>
+        <main>
+          <section>
+            <h2>Produtos em Destaque</h2>
 
-        <div className="produtos">
-          {produtosDestaque.map((produto) => (
-            <ProductCard
-              key={produto.id}
-              id={produto.id}
-              nome={produto.nome}
-              preco={produto.preco}
-              imagem={produto.imagem}
-            />
-          ))}
-        </div>
-      </section>
+            <div className="produtos">
+              {produtosDestaque.map((produto) => (
+                <ProductCard
+                  key={produto.id}
+                  id={produto.id}
+                  nome={produto.nome}
+                  preco={produto.preco}
+                  imagem={produto.imagem}
+                />
+              ))}
+            </div>
+          </section>
 
-      <section>
-        <h2>Novidades</h2>
+          <section>
+            <h2>Novidades</h2>
 
-        <article>
-          <h3>Promoção da Semana</h3>
-          <p>Descontos especiais em produtos da cesta básica. Aproveite!</p>
-          <img src={cestaBasica} alt="Cesta básica" />
-        </article>
-      </section>
+            <article>
+              <h3>Promoção da Semana</h3>
+              <p>Descontos especiais em produtos da cesta básica. Aproveite!</p>
+              <img src={cestaBasica} alt="Cesta básica" />
+            </article>
+          </section>
+        </main>
 
-      <Footer />
+        <Footer />
+      </div>
     </>
   )
 }
