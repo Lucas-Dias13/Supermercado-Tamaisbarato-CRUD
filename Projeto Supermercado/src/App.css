@@ -299,6 +299,59 @@ article img {
   transform: scale(0.97);
 }
 
+.acoes-carrinho {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: auto;
+  justify-content: center;
+}
+
+.botao-quantidade {
+  min-width: 42px;
+  padding: 10px 12px;
+  background-color: #27ae60;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.botao-quantidade:hover {
+  background-color: #219150;
+}
+
+.botao-remover-carrinho {
+  padding: 10px 14px;
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.botao-remover-carrinho:hover {
+  background-color: #c0392b;
+}
+
+.botao-limpar-carrinho {
+  width: 100%;
+  margin-top: 12px;
+  padding: 12px;
+  background: linear-gradient(135deg, #e74c3c, #c0392b);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.botao-limpar-carrinho:hover {
+  background: linear-gradient(135deg, #c0392b, #a93226);
+}
+
 footer {
   display: flex;
   flex-direction: column;

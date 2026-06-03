@@ -10,6 +10,7 @@ import oleoSoja from "../assets/oleosoja.png"
 import farinhaTrigo from "../assets/farinhatrigo.png"
 import macarrao from "../assets/macarrao.png"
 import manteiga from "../assets/manteiga.png"
+import acucar from "../assets/acucar.png"
 
 function CadastroProdutos() {
     const produtosPadrao = [
@@ -66,6 +67,12 @@ function CadastroProdutos() {
             nome: "Manteiga 500g",
             preco: 29.99,
             imagem: manteiga,
+        },
+        {
+            id: 10,
+            nome: "Açucar 5kg",
+            preco: 16.99,
+            imagem: acucar,
         },
     ]
 
